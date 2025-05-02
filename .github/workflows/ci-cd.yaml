@@ -37,7 +37,7 @@ jobs:
             "public.ecr.aws/${{ vars.AWS_ECR_ALIAS }}/bookstore-ui:${{ env.TAG }}"
 
   deploy:
-    runs-on: bookstore-api-arc
+    runs-on: bookstore-ui-arc
     needs: build
     steps:
       - uses: actions/checkout@v4
