@@ -1,0 +1,29 @@
+# Default values for the bookstore-ui chart
+replicaCount: 1
+
+image:
+  repository: public.ecr.aws/xledbd/bookstore-ui
+  tag: "1.0"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 3000
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+
+ingress:
+  enabled: true
+  tls: false
+  hosts:
+  - host: "*"
+    paths:
+    - path: "/"
+      pathType: Prefix
