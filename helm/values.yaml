@@ -23,7 +23,7 @@ ingress:
   enabled: true
   tls: false
   hosts:
-  - host: "*"
+  - host: bookstore.local
     paths:
     - path: "/"
       pathType: Prefix
